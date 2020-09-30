@@ -1,0 +1,9 @@
+
+.journal-item_action {
+  display: flex;
+  margin-top: 5px;
+}
+
+.journal-item_action > p {
+  margin-right: 5px;
+}

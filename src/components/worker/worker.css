@@ -1,0 +1,13 @@
+.worker {
+    margin-top: 20px;
+}
+
+
+.worker-section_add {
+    background-color: #718096;
+    border: 0px;
+    border-radius: 4px;
+    padding: 5px 5px 2px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }

@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import "./App.css";
+import Exchanges from "./components/exchanges/exchanges.js";
+import Worker from "./components/worker/worker.js";
+import Journal from "./components/journal/journal.js";
+import Modal from "./components/modal/modal.js";
 
 function App() {
+  let [modal, setModal] = useState({
+    open: true,
+    pair: true
+  });
+
+  function modalToggle(pair){
+    setModal(Object.assign({}, modal, {open: !modal.open, pair}))
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='wraper'>
+        <Exchanges modalToggle={modalToggle} />
+        <Worker modalToggle={modalToggle} />
+        <Journal />
+      </div>
+
+      {
+        modal.open ? <Modal pair={modal.pair}  modalToggle={modalToggle} />: null
+      }
+     
     </div>
   );
 }

@@ -1,0 +1,18 @@
+
+
+.exchange-item_flex {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-item_fond,
+.exchange-item_status {
+  display: block;
+  margin: 5px 5px 5px 0px;
+}
+
+.exchange-item_status {
+  padding: 3px;
+  border-radius: 2px;
+}
+
